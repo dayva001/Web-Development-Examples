@@ -1,0 +1,9 @@
+package cs3220.model;
+
+import java.time.LocalDateTime;
+
+public class Comment 
+{
+	LocalDateTime commentTime;
+	String commenter, content;
+}

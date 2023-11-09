@@ -1,0 +1,30 @@
+package cs3220.model;
+
+import java.time.LocalDateTime;
+
+public class Comment 
+{
+	LocalDateTime timestamp;	
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+	
+	public void setCommentTime(LocalDateTime commentTime) {
+		this.commentTime = commentTime;
+	}
+	public String getCommenter() {
+		return commenter;
+	}
+	public void setCommenter(String commenter) {
+		this.commenter = commenter;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	String commenter, content;
+}
+
+

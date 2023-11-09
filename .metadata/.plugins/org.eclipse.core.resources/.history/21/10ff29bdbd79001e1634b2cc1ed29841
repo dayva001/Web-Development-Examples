@@ -1,0 +1,26 @@
+<#import "/spring.ftl" as spring />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Posts</title>
+	</head>
+	<body>
+	<p><a href="postQuestion">Ask a Question</a></p>
+		<ul>
+		<#list posts>
+	       		<#items as post>
+	           		 <li>${post.postName} Posted by ${post.poster} at ${post.formattedTime}. 
+	           		 <#if post.comments.size ==0>
+	           		 	No
+	           		 	<#else>
+	           		 	
+	           		 </#if>
+	           		 	Comments
+	           		  </li>
+	            </#items>
+	           </#list>
+		</ul>
+
+	</body>
+</html>

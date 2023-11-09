@@ -1,0 +1,31 @@
+package cs3220.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import cs3220.DataController;
+import cs3220.DataStore;
+
+@Controller
+public class MainController {
+	public final DataController data;
+	
+	public MainController()
+	{
+		data = new DataController();
+	}
+	
+	public MainController(DataController data) 
+	{
+		this.data=data;
+	}
+	
+	@RequestMapping("/")
+	public String index(Model model)
+	{
+		
+		return "index";
+	}
+
+}

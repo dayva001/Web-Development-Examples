@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>${event.name}</title>
+	</head>
+	<body>
+		<div>
+			Event: ${event.name}<br>
+			Date: ${event.date}<br>
+			Created by: ${event.creator}<br>
+		</div>
+		<div>
+			<table border="1" cellspacing="2" cellpadding="5">
+				<thead>
+					<tr><th>Item</th><th>Amount</th><th>Brought By</th></tr>
+				</thead>
+				<tbody>
+				<#List event.eventItems as eventItems>
+					<tr>
+						<td>eventItems.name</td><td>eventItems.amount</td> <td>eventItems.bringer</td>
+					</tr>
+				</#List>
+				<tr>
+					<td><a href="addItem/id=${event.id}">Add Item</a></td> <td></td> <td></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

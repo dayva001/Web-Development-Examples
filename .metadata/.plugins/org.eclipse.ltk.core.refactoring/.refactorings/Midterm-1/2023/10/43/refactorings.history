@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Midterm-1/src/main/resources/templates/signUp.html&apos; to &apos;signUp.ftlh&apos;" description="Rename resource &apos;signUp.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/signUp.html" name="signUp.ftlh" stamp="1698362056790" updateReferences="true"/>
+</session>

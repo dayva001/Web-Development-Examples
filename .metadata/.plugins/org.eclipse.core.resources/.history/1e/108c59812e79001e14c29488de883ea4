@@ -1,0 +1,47 @@
+<#import "/spring.ftl" as spring />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Weekly Job Assignment</title>
+	</head>
+	<body>
+		<form>
+			<#assign cnt = 1>
+	        <select id="week">
+	       	 <#list weeks>
+	       		<#items as week>
+	       		
+	           		 <option value="${week.id}">Week ${cnt}</option>
+	           		 <#assign cnt++>
+	            </#items>
+	           </#list>
+	        </select>
+	        <input type="submit" value="Submit">
+    		</form>
+    		<a href = "/addWeek">Add Week</a>
+    		<table border="1" cellspacing="2" cellpadding="5">
+				<thead>
+					<tr><th>Job</th><th>Student</th></tr>
+				</thead>
+				<tbody>
+					<#list weeks[id].jobs>
+			       		<#items as job>
+						<tr>
+							<td>${job.name}</td>
+							<td>
+								<#if job.student??>
+									${job.student.name}
+								<#else>
+									<a href="signUp/${job.id}">Sign Up</a>
+								</#if>
+
+							</td>
+						</tr>
+						</#items>
+			          </#list>
+
+				</tbody>
+				</table>
+	</body>
+</html>

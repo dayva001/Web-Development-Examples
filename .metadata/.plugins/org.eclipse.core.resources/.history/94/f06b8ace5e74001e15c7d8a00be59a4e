@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Added Week</title>
+	</head>
+	<body>
+		<form action="/?id=${week.id}#" method="POST">
+		<#list students>
+			<#items as student>
+				<input type="radio" id="${student.id}" name="{$student.name}" value="${student.id}">
+			  	<label for="${student.name}">${student.name}</label><br>
+			</#items>
+		</#list>
+		  <br> <br>
+		  <button>Sign Up</button>
+		</form>
+	</body>
+</html>

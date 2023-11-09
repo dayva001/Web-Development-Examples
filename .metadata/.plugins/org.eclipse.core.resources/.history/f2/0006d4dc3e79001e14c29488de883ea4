@@ -1,0 +1,68 @@
+package cs3220.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import cs3220.DataStore;
+
+@Controller
+public class MainController {
+	public final DataStore data;
+	
+	public MainController()
+	{
+		data = new DataStore();
+	}
+	
+	public MainController(DataStore data) 
+	{
+		this.data=data;
+	}
+	
+	@GetMapping("/")
+	public String index(Model model)
+	{
+		int id=data.getWeeks().get(1).getId();
+		model.addAttribute("id", id);
+		model.addAttribute("weeks", data.getWeeks());
+		model.addAttribute("week", data.getWeek(id));
+		return "index";
+	}
+	
+	@PostMapping("/")
+	public String index(Model model, int id)
+	{
+		model.addAttribute("id", id);
+		System.out.println(id);
+		model.addAttribute("weeks", data.getWeeks());
+		model.addAttribute("week", data.getWeek(id));
+		return "index";
+	}
+		
+	@RequestMapping("/addWeek")
+	public String addWeek(Model model)
+	{
+		data.addWeek();
+		return "redirect:/";
+	}
+	
+	@GetMapping("signUp/{id}")
+	public String signUp(Model model, @PathVariable int id)
+	{
+		model.addAttribute("students", data.getStudents());
+		model.addAttribute("jobID", data.getJob(id));
+		model.addAttribute("week", data.getWeekFromJobID(id));
+		return "signUp";
+	}
+	@PostMapping("signUp/{id}")
+	public String signUp(Model model, @PathVariable int id, int studentID)
+	{
+		data.getJob(id).setStudent(data.getStudent(studentID));
+		 return "redirect:/{id}";
+	}
+}
+ 

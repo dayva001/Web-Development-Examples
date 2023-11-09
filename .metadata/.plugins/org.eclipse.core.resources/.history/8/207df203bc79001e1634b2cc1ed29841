@@ -1,0 +1,17 @@
+<#import "/spring.ftl" as spring />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Posts</title>
+	</head>
+	<body>
+	<p><a href="postQuestion">Ask a Question</a></p>
+		<ul>
+		  <li>Coffee</li>
+		  <li>Tea</li>
+		  <li>Milk</li>
+		</ul>
+
+	</body>
+</html>

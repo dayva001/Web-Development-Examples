@@ -1,0 +1,17 @@
+<#import "/spring.ftl" as spring />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Create a Post</title>
+	</head>
+	<body>
+		<form method="post">
+			
+			Your Name: <@spring.formInput "post.poster"/><br>
+			Your Question: <@spring.formInput "post.postName"/><br>
+			<button>Post</button>
+		</form>
+
+</body>
+</html>

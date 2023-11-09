@@ -1,0 +1,18 @@
+<#import "/spring.ftl" as spring />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>${post.postName}</title>
+	</head>
+	<body>
+			<p><strong>${post.postName}</strong> Posted by ${post.poster} at ${post.formattedTime}.</p>
+			<#list post.comments>
+				<#items as comment>
+					
+				</#items>
+			</#list>
+			<p><a>Back to Questions</a>|<a>Post an Answer</a>
+	
+	</body>
+</html>

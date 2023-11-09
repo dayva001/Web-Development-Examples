@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<#setting date_format="M/dd/yy">
+	<head>
+	<meta charset="UTF-8">
+	<title>Events</title></head><body>
+	<h2>Events</h2>
+	<div><a href="addEvent">New Events</a></div><br>
+	
+	<div>
+		<#list events>
+			<table border="1" cellspacing="2" cellpadding="5">
+				<thead>
+					<tr><th>Event</th><th>Date</th><th>Created By</th></tr>
+				</thead>
+				<tbody>
+						<#items as events>
+						<tr>
+							<td><a href="viewEvent?id=${events.id}">${events.name}</a></td> <td>${events.date?datetime("yyyy-MM-d")?date}</td> <td>${events.creator}</td>
+						</tr>
+						</#items>
+				</tbody>
+			</table>
+		</#list>
+	</div>
+	
+	</body>
+</html>

@@ -1,0 +1,19 @@
+package cs3220.model;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+public class Post 
+{
+	LocalDateTime postTime;
+	String poster, postName;
+	List<Comment> comments;
+	
+	public Post(LocalDateTime postTime, String poster, String postName)
+	{
+		this.postTime = postTime;
+		this.poster = poster;
+		this.postName = postName;
+		comments = new ArrayList<Comment>();
+	}
+}

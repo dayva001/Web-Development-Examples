@@ -1,0 +1,17 @@
+package cs3220;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import cs3220.model.Post;
+
+@Component
+public class DataController {
+	List<Post> posts;
+	
+	public DataController()
+	{
+		posts = new ArrayList<Post>();
+	}
+}
